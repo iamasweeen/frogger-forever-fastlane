@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { GameBoard } from './GameBoard';
 import { GameOverModal } from './GameOverModal';
@@ -38,9 +37,9 @@ const Game = () => {
   const carLanes = [150, 250, 350, 450];
   const carColors = ['#EF4444', '#3B82F6', '#F59E0B', '#8B5CF6', '#10B981'];
 
-  const generateCar = useCallback(() => {
+  const generateCar = useCallback((): Car => {
     const lane = carLanes[Math.floor(Math.random() * carLanes.length)];
-    const direction = Math.random() > 0.5 ? 1 : -1;
+    const direction: 1 | -1 = Math.random() > 0.5 ? 1 : -1;
     const startX = direction === 1 ? -60 : GAME_WIDTH + 60;
     const baseSpeed = 2 + Math.floor(score / 50) * 0.5; // Increase speed based on score
     const speed = baseSpeed + Math.random() * 2;
