@@ -13,17 +13,17 @@ export const Vehicle: React.FC<VehicleProps> = ({ car }) => {
       style={{
         left: car.x,
         top: car.y,
-        width: 50,
-        height: 25,
+        width: 40, // Adjusted for mobile
+        height: 20,
         backgroundColor: car.color,
         transform: `translateY(-50%) ${car.direction === -1 ? 'scaleX(-1)' : ''}`,
       }}
     >
       {/* Car details */}
-      <div className="absolute top-1 left-1 w-2 h-2 bg-white rounded-full opacity-90" />
-      <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-90" />
-      <div className="absolute bottom-1 left-2 w-2 h-2 bg-gray-800 rounded-full" />
-      <div className="absolute bottom-1 right-2 w-2 h-2 bg-gray-800 rounded-full" />
+      <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 bg-white rounded-full opacity-90" />
+      <div className="absolute top-0.5 right-0.5 w-1.5 h-1.5 bg-white rounded-full opacity-90" />
+      <div className="absolute bottom-0.5 left-1 w-1.5 h-1.5 bg-gray-800 rounded-full" />
+      <div className="absolute bottom-0.5 right-1 w-1.5 h-1.5 bg-gray-800 rounded-full" />
     </div>
   );
 };
